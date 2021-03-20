@@ -4,14 +4,14 @@ body{
     font-family: arial;
 }
 header{
-    background-color: #eee;
+    background-color: rgb(92, 226, 208);
     padding:30px;
     text-align:center;
 }
 
 nav {
     overflow: hidden;
-    background-color:black;
+    background-color:rgb(4, 3, 73);
     list-style:none;
 }
 
@@ -24,11 +24,11 @@ nav a{
     font-size:17px;
 }
 nav a:hover{
-    background-color:#ddd;
+    background-color:rgb(41, 180, 235);
     color:#000;
 }
 nav a.ativo{
-    background-color: #800;
+    background-color: rgb(41, 180, 235);
     color: #fff;    
 }
 .principal{
