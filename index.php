@@ -23,24 +23,35 @@
     <div class="container">
         <ul class="lista">
             <li>
-                <img src="img/VentodaN02.jpeg" alt="" width="250px" height="200">
-                <br>
+                <img src="img/VentodaN02.jpeg" alt="" width="150px" height="200">
                 <span>ventosa 02</span>
                 <a class="btn" href="#">ver detalhes</a>
             </li>
             <li>
-                <img src="img/Amortecedor.jpeg" alt="" width="250px" height="200">
-                <br>
+                <img src="img/Amortecedor.jpeg" alt="" width="150px" height="200">
                 <span>amortecedor</span>
                 <a class="btn" href="#">ver detalhes</a>
             </li>
             <li>
-                <img src="img/AnelOring.jpeg" alt="" width="250px" height="200">
-                <br>
+                <img src="img/AnelOring.jpeg" alt="" width="150px" height="200">
                 <span>anel oring</span>
                 <a class="btn" href="#">ver detalhes</a>
             </li>
-            
+            <li>
+                <img src="img/ArruelaVentosa.jpeg" alt="" width="150px" height="200">
+                <span>arruela</span>
+                <a class="btn" href="#">ver detalhes</a>
+            </li>
+            <li>
+                <img src="img/Canopla650.jpeg" alt="" width="150px" height="200">
+                <span>canopla 650</span>
+                <a class="btn" href="#">ver detalhes</a>
+            </li>
+            <li>
+                <img src="img/SedeCValvula.jpeg" alt="" width="150px" height="200">
+                <span>anel oring</span>
+                <a class="btn" href="#">ver detalhes</a>
+            </li>
         </ul>
     </div> 
 
