@@ -19,10 +19,17 @@
     </header>
 
     <nav>
-        <a href="index.html">PEÇAS</a>
+        <a href="index.php">PEÇAS</a>
         <a class="ativo" href="">BOMBAS</a>
-        <a href="carrinho.html">CARRINHO DE COMPRAS</a>          
+        <a href="carrinho.php">CARRINHO DE COMPRAS</a>          
     </nav>
+    <form action="" method="post" enctype="multipart/form-data" id="form_busca">
+        <label>
+            <span>Buscar Produto</span>
+            <input type="text" name="buscar" id="busca" />
+        </label>
+    </form>
+    <div id="resultado_busca"></div>
 
     <section class="principal">
        
