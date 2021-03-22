@@ -92,3 +92,53 @@ ul.lista li a{
     background:#000;
     cursor:pointer;
 }
+
+.produto_single{
+    float:left;
+    width:800px;
+    margin: 10px;
+}
+
+.produto_single img{
+    float: left;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 4px;
+    margin-right: 10px;
+}
+
+.produto_single span{
+    font: 35px tahoma, arial, helvetica;
+    color:#666;
+    float: left;
+    width: 300px;
+    margin-bottom: 10px;
+}
+
+.produto_single span.Valor{
+    font-size: 30px;
+    color: #090;
+}
+
+.box{
+    float: left;
+    width: 300px;
+    background:#ffff;
+    padding:5px;
+}
+
+.box input[type=sumit]{
+    margin-top:8px;
+    float: left;
+    padding:10px;
+    background:#069;
+    font: 14px tahoma, arial;
+    color:#fff;
+    text-shadow: #000 0 1px 0;
+    border: 1px solid #036;
+}
+
+.box input[type=sumit]:hover{
+    cursor: pointer;
+    background:#036;
+}

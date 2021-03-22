@@ -14,14 +14,15 @@
         <div class="produto_single">
             <img src="img/Amortecedor.jpeg" alt="" width="320">
             <span>AMORTECEDOR</span>
-            <span class="valor">R$ 30,00</span>      
+            <span class="valor">R$ 30,00</span> 
+            <div class="box">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="acao" value="add">
+                    <input type="submit" name="comprar" value="Adicionar ao carrinho">
+                </form>
+            </div>     
         </div>
-        <div class="box">
-            <form action="" method="post">
-                <input type="submit" name="comprar" value="Adicionar ao carrinho">
-            </form>
         
-        </div>
     </div>
 </body>
 </html>
