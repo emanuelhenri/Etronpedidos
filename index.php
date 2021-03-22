@@ -1,3 +1,8 @@
+<?php
+spl_autoload_register(function($classe){
+    require_once('sys/'.$classe.'.class.php');
+});
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
