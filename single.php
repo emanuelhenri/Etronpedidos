@@ -18,18 +18,20 @@ spl_autoload_register(function($classe){
 <body>
     <div class="container">
     <?php
-    $id_produto=(int)$_GET['produto_id'];
-    $produto_single = bd::conn()->prepare("SELECT * FROM 'produtos' WHERE id= ?");
+    $id_produto = (int) $_GET['produto_id'];
+    $produto_single = BD::conn()->prepare("SELECT * FROM produtos WHERE id= ?");
     $produto_single->execute(array($id_produto));
 
-    while($dados_produto= $produto_single->fetchObject()){
+    while($dados_produto = $produto_single->fetchObject()){
     ?>
         <div class="produto_single">
             <img src="img/<?php echo $dados_produto->imagem;?>" alt="" width="320">
-            <span>AMORTECEDOR</span>
-            <span class="valor">R$ 30,00</span> 
+            <span><?php echo $dados_produto->nome;?></span>
+            <span class="valor">R$ <?php echo number_format($dados_produto->preco, 2, ',', '.');?></span> 
             <div class="box">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="carrinho.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="qtd" value="<?php echo$id_produto;?>">
+                    <input type="hidden" name="id" value="<?php echo$id_produto;?>">
                     <input type="hidden" name="acao" value="add">
                     <input type="submit" name="comprar" value="Adicionar ao carrinho">
                 </form>

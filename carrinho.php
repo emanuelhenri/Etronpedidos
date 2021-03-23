@@ -1,3 +1,35 @@
+<?php
+spl_autoload_register(function($classe){
+    require('sys/'.$classe.'.class.php');
+});
+ BD::conn();
+ $carrinho = new carrinho();
+ if(isset($_POST['acao'])&& $_POST['acao']=='add'){
+     $id_produto = (int)$_POST['id'];
+     $qtd = (int)$_POST['qtd'];
+     $forma=(isset($_POST['forma'])) ? $_POST['forma']:null;
+
+     $carrinho->adicionarCarrinho($id_produto,$qtd,$forma);
+     
+ }
+
+if(isset($_POST['atualizar'])){
+    $qtd = $_POST['qtd'];
+
+    foreach($qtd as $indice => $valor){
+        $carrinho->alterarQtd($indice,$valor);
+
+    }
+}
+
+ if(isset($_GET['acao'])&& $_GET['acao']== 'del'){
+    $id= $_GET['id'];
+    $carrinho->excluirQtd($id);
+}
+ $produtos= $carrinho-> listarProdutos();
+ $total = $carrinho->valorTotal();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -36,24 +68,31 @@
                 <tfoot>
                     <tr>
                         <td colspan="4">Valor total</td>
-                        <td>R$ 180,00</td>
+                        <td>R$ <?php echo number_format($total, 2,',','.');?></td>
                     </tr>
                     <tr>
                         <td><input class="btn reload" type="submit" name="atualizar" value="Atualizar carrinho"></td>
-                        <td><a class="btn" href="#">Continuar comprando</a></td>
+                        <td><a class="btn" href="index.php">Continuar comprando</a></td>
                 </tr>
                 </tfoot>
                 <tbody>
-                    <?php for($r=0; $r<=5;$r++):?>
+                <?php
+                $contProdutos = count($produtos);
+                if($contProdutos == 0 ){
+                    echo'<tr><tdcolspan="5">NÃO TEM PRODUTOS NO CARRINHO COMPRE AGORA </td></tr>';
+                }else{
+                    foreach($produtos as $indice => $produto):
+                ?>
                     <tr>
-                        <td>canopla</td>
-                        <td> <input type="text" size="3" name="qtd[]"></td>
-                        <td>R$ 90,00</td>
-                        <td>R$ 90,00</td>
-                        <td><a class="btn"href="#">Remover</a></td>
+                        <td><?php echo $produto['nome'];?></td>
+                        <td> <input type="text" size="3" name="qtd[<?php echo $indice;?>]" value="<?php echo $produto['qtd'];?>"></td>
+                        <td>R$ <?php echo number_format($produto['preco'], 2,',','.')?></td>
+                        <td>R$ <?php echo number_format($produto['subtotal'],2,',','.')?></td>
+                        <td><a class="btn"href="?acao=del&id=<?php echo$indice;?>">Remover</a></td>
                     </tr>
-                    <?php endfor;?>
+                    <?php endforeach;} ?>
                 </tbody>
+                
             </form>
         </table>
     </div>
