@@ -16,13 +16,7 @@ session_start();
     <section class="hero is-success is-fullheight">
         <div class="hero-body">
             <div>
-                <div id="menu">
-
-                    <ul>
-                        
-
-                    </ul>
-                </div></br>
+                </br>
                 <div class="container has-text-centered">
                     <div class="column is-4 is-offset-4">
                         <h3 class="title has-text-grey">Sistema de Cadastro</h3>
@@ -45,7 +39,8 @@ session_start();
                                         <input name="celular" type="text" class="input is-large" placeholder="celular" autofocus>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn">Cadastrar</button>
+                                <button type="submit" class="btn">enviar</button>
+                                <a class="btn"href="carrinho.php">voltar</a>
                             </form>
                         </div>
                     </div>
