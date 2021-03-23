@@ -2,6 +2,7 @@
 spl_autoload_register(function($classe){
     require_once('sys/'.$classe.'.class.php');
 });
+ BD::conn();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,36 +28,21 @@ spl_autoload_register(function($classe){
     
     <div class="container">
         <ul class="lista">
+        <?php
+            $queryProdutos = BD::conn()->prepare("SELECT * FROM `produtos` ORDER BY id DESC");
+            $queryProdutos->execute();
+            while($fetchProduto = $queryProdutos->fetchObject()){
+        ?>
+
             <li>
-                <img src="img/VentodaN02.jpeg" alt="" width="150px" height="200">
-                <span>ventosa 02</span>
-                <a class="btn" href="#">ver detalhes</a>
+                <img src="img/<?php echo $fetchProduto ->imagem; ?>" alt="" width="150px" height="200">
+                <span><?php echo $fetchProduto->nome; ?></span>
+                <a class="btn" href="single.php?produto_id=<?php echo $fetchProduto->id; ?>">ver detalhes</a>
             </li>
-            <li>
-                <img src="img/Amortecedor.jpeg" alt="" width="150px" height="200">
-                <span>amortecedor</span>
-                <a class="btn" href="#">ver detalhes</a>
-            </li>
-            <li>
-                <img src="img/AnelOring.jpeg" alt="" width="150px" height="200">
-                <span>anel oring</span>
-                <a class="btn" href="#">ver detalhes</a>
-            </li>
-            <li>
-                <img src="img/ArruelaVentosa.jpeg" alt="" width="150px" height="200">
-                <span>arruela</span>
-                <a class="btn" href="#">ver detalhes</a>
-            </li>
-            <li>
-                <img src="img/Canopla650.jpeg" alt="" width="150px" height="200">
-                <span>canopla 650</span>
-                <a class="btn" href="#">ver detalhes</a>
-            </li>
-            <li>
-                <img src="img/SedeCValvula.jpeg" alt="" width="150px" height="200">
-                <span>anel oring</span>
-                <a class="btn" href="#">ver detalhes</a>
-            </li>
+           
+            <?php
+            }
+            ?>
         </ul>
     </div> 
 

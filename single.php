@@ -1,3 +1,9 @@
+<?php
+spl_autoload_register(function($classe){
+    require_once('sys/'.$classe.'.class.php');
+});
+ BD::conn();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,8 +17,15 @@
 </head>
 <body>
     <div class="container">
+    <?php
+    $id_produto=(int)$_GET['produto_id'];
+    $produto_single = bd::conn()->prepare("SELECT * FROM 'produtos' WHERE id= ?");
+    $produto_single->execute(array($id_produto));
+
+    while($dados_produto= $produto_single->fetchObject()){
+    ?>
         <div class="produto_single">
-            <img src="img/Amortecedor.jpeg" alt="" width="320">
+            <img src="img/<?php echo $dados_produto->imagem;?>" alt="" width="320">
             <span>AMORTECEDOR</span>
             <span class="valor">R$ 30,00</span> 
             <div class="box">
@@ -22,7 +35,9 @@
                 </form>
             </div>     
         </div>
-        
+        <?php
+    }
+        ?>
     </div>
 </body>
 </html>
