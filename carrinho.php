@@ -44,11 +44,9 @@ if(isset($_POST['atualizar'])){
 <body>
     <header>
         <h2> ETRON BOMBAS DE POÇO SUBMESSAS</h2>
-        <P>EMAIL...</P>
     </header>
     <nav>
         <a href="index.php">PEÇAS</a>
-        <a href="bombas.php">BOMBAS</a>
         <a class="ativo" href="">CARRINHO DE COMPRAS</a>          
     </nav>
     <div class="container">
@@ -73,6 +71,7 @@ if(isset($_POST['atualizar'])){
                     <tr>
                         <td><input class="btn reload" type="submit" name="atualizar" value="Atualizar carrinho"></td>
                         <td><a class="btn" href="index.php">Continuar comprando</a></td>
+                        <td><a class="btn"href="formulario.php">Enviar pedido</a></td>
                 </tr>
                 </tfoot>
                 <tbody>
@@ -89,6 +88,7 @@ if(isset($_POST['atualizar'])){
                         <td>R$ <?php echo number_format($produto['preco'], 2,',','.')?></td>
                         <td>R$ <?php echo number_format($produto['subtotal'],2,',','.')?></td>
                         <td><a class="btn"href="?acao=del&id=<?php echo$indice;?>">Remover</a></td>
+
                     </tr>
                     <?php endforeach;} ?>
                 </tbody>

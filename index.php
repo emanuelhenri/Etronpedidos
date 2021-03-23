@@ -18,11 +18,10 @@ spl_autoload_register(function($classe){
 <body>
     <header>
         <h2> ETRON BOMBAS DE POÇO SUBMESSAS</h2>
-        <P>EMAIL...</P>
+
     </header>
     <nav>
         <a class="ativo" href="">PEÇAS</a>
-        <a href="bombas.php">BOMBAS</a>
         <a href="carrinho.php">CARRINHO DE COMPRAS</a>          
     </nav>
     
